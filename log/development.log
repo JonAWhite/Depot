@@ -1,0 +1,178 @@
+  [4;36;1mSQL (49.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (18.9ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20110205010612)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mCREATE TABLE "products" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "description" text, "image_url" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20110205010612')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_list("products")[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateProducts (20110205010612)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("products")[0m
+
+
+Processing Rails::InfoController#properties (for 127.0.0.1 at 2011-02-05 01:30:19) [GET]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Completed in 206ms (View: 27, DB: 1) | 200 OK [http://127.0.0.1/rails/info/properties]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-02-05 01:31:00) [GET]
+  [4;36;1mProduct Load (0.4ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 116ms (View: 111, DB: 0) | 200 OK [http://127.0.0.1/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2011-02-05 01:31:14) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 16ms (View: 10, DB: 0) | 200 OK [http://127.0.0.1/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-02-05 01:32:27) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GmynTJonwAE8V8kIIJmxGupBmGhnIGw2BdAykwfWy5E=", "product"=>{"image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p>\r\nThis book is a recipe based approach to using Subversion."}}
+  [4;35;1mProduct Create (0.4ms)[0m   [0mINSERT INTO "products" ("created_at", "title", "image_url", "updated_at", "description") VALUES('2011-02-05 01:32:27', 'Pragmatic Version Control', '/images/svn.jpg', '2011-02-05 01:32:27', '<p>
+This book is a recipe based approach to using Subversion.')[0m
+Redirected to http://127.0.0.1:3000/products/1
+Completed in 19ms (DB: 0) | 302 Found [http://127.0.0.1/products]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-02-05 01:32:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/products/1]
+
+
+Processing ProductsController#edit (for 127.0.0.1 at 2011-02-05 01:32:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/edit
+Completed in 12ms (View: 8, DB: 0) | 200 OK [http://127.0.0.1/products/1/edit]
+
+
+Processing ProductsController#update (for 127.0.0.1 at 2011-02-05 01:32:43) [PUT]
+  Parameters: {"commit"=>"Update", "authenticity_token"=>"GmynTJonwAE8V8kIIJmxGupBmGhnIGw2BdAykwfWy5E=", "id"=>"1", "product"=>{"image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"<p>\r\nThis book is a recipe based approach to using Subversion.\r\n"}}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;35;1mProduct Update (0.3ms)[0m   [0mUPDATE "products" SET "updated_at" = '2011-02-05 01:32:43', "description" = '<p>
+This book is a recipe based approach to using Subversion.
+' WHERE "id" = 1[0m
+Redirected to http://127.0.0.1:3000/products/1
+Completed in 17ms (DB: 1) | 302 Found [http://127.0.0.1/products/1]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-02-05 01:32:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-02-05 01:32:46) [GET]
+  [4;35;1mProduct Load (0.5ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 10ms (View: 6, DB: 0) | 200 OK [http://127.0.0.1/products]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-02-05 01:32:52) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mProduct Load (0.2ms)[0m   [0;1mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 8ms (View: 3, DB: 0) | 200 OK [http://127.0.0.1/products/1]
+
+
+Processing ProductsController#destroy (for 127.0.0.1 at 2011-02-05 01:33:01) [DELETE]
+  Parameters: {"authenticity_token"=>"GmynTJonwAE8V8kIIJmxGupBmGhnIGw2BdAykwfWy5E=", "id"=>"1"}
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 1) [0m
+  [4;36;1mProduct Destroy (0.2ms)[0m   [0;1mDELETE FROM "products" WHERE "id" = 1[0m
+Redirected to http://127.0.0.1:3000/products
+Completed in 14ms (DB: 0) | 302 Found [http://127.0.0.1/products/1]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-02-05 01:33:01) [GET]
+  [4;35;1mProduct Load (0.4ms)[0m   [0mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 5ms (View: 1, DB: 0) | 200 OK [http://127.0.0.1/products]
+
+
+Processing ProductsController#new (for 127.0.0.1 at 2011-02-05 01:33:03) [GET]
+Rendering template within layouts/products
+Rendering products/new
+Completed in 8ms (View: 4, DB: 0) | 200 OK [http://127.0.0.1/products/new]
+
+
+Processing ProductsController#create (for 127.0.0.1 at 2011-02-05 01:33:29) [POST]
+  Parameters: {"commit"=>"Create", "authenticity_token"=>"GmynTJonwAE8V8kIIJmxGupBmGhnIGw2BdAykwfWy5E=", "product"=>{"image_url"=>"/images/svn.jpg", "title"=>"Pragmatic Version Control", "description"=>"This book is a recipe based approach to learning SVN."}}
+  [4;36;1mProduct Create (0.3ms)[0m   [0;1mINSERT INTO "products" ("created_at", "title", "image_url", "updated_at", "description") VALUES('2011-02-05 01:33:29', 'Pragmatic Version Control', '/images/svn.jpg', '2011-02-05 01:33:29', 'This book is a recipe based approach to learning SVN.')[0m
+Redirected to http://127.0.0.1:3000/products/2
+Completed in 17ms (DB: 0) | 302 Found [http://127.0.0.1/products]
+
+
+Processing ProductsController#show (for 127.0.0.1 at 2011-02-05 01:33:29) [GET]
+  Parameters: {"id"=>"2"}
+  [4;35;1mProduct Load (0.2ms)[0m   [0mSELECT * FROM "products" WHERE ("products"."id" = 2) [0m
+Rendering template within layouts/products
+Rendering products/show
+Completed in 6ms (View: 2, DB: 0) | 200 OK [http://127.0.0.1/products/2]
+
+
+Processing ProductsController#index (for 127.0.0.1 at 2011-02-05 01:33:31) [GET]
+  [4;36;1mProduct Load (0.5ms)[0m   [0;1mSELECT * FROM "products" [0m
+Rendering template within layouts/products
+Rendering products/index
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://127.0.0.1/products]
